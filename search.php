@@ -10,39 +10,22 @@
 
 <div class = "wrapper">
 	<section>
-<!---angezeigtes hier--->
+
 <?php
 	$search = null;
 	if(!empty ($_GET["search"])){
 		$search = $_GET["search"];
 	}
 ?>
-<!---Suchfeld und suchen Button--->
-		<form id="form-search" name="search-item" method="GET" target="_self" action="">
-			<input type="text" name="search" maxlength="32" placeholder="" required><br>
-			<input type="submit" value="Search now!"><br>
-		</form>
+	<form id="form-search" name="search-item" method="GET" target="_self" action="">
+		<input type="text" name="search" maxlength="32" placeholder="" required><br>
+		<br>
+		<input type="submit" value="Search now!"><br>
+	</form>
 <?php
+	require_once 'inc/get_data.php.inc';
+	search($search);
 
-	$query = "SELECT * FROM `items` WHERE `description` LIKE '%$search%'"; //hier variable einfügen
-	$result = $sql->query($query);
-
-	echo "<table>"; // start a table tag in the HTML
-	if(!empty ($search)){
-		foreach ($result as $row){			
-				$id = $row['item_id'];
-				echo "<li class='item_pages'>";
-				//echo <a href="">; Einzelne Seite Link in DB
-				echo "<h3>" . $row['name'] . "</h3>";
-				echo "<p>Material: "  . $row['material'] . "</p>";
-				echo "<p>Preis: " . $row['price'] . " € " . "</p>";
-				echo "<p>" . $row['description'] . "<br />" . "</p>";
-				$image =  $row['picture'];
-				echo "<img src='$image'>";
-				//echo </a>;
-				echo "</li>";
-		}
-	}
 ?>
 <?php
 	//Insert Footer
