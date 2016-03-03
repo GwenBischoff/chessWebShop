@@ -8,7 +8,8 @@ GENERAL
 	background-color: #FFF;
 }
 img {
-	max-width: 30%;
+	max-width: 20%;
+	margin-bottom: 1em;
 }
 
 /**************************
@@ -16,10 +17,12 @@ HEADING
 **************************/
 header{
 	clear:top; /* Funktioniert nicht?!*/
+	margin-top: -22px;
+    padding:0;
 }
 .title{
     height: 100%;
-	clear: top;
+    padding-top: 22px;
 	background-color: rgba(159, 155, 162, 0.18);
 	background-image: url("chess_main.jpg");
 }
@@ -71,6 +74,23 @@ FOOTER
 	color: #BBB;
 }
 
+/**************************
+Item Display
+**************************/
+.item_pages li{
+	float: left;
+	width: 45%;
+	margin: 2.5%;
+	background-color: #F5F5F5;
+}
+.item_image {
+	float: left;
+	clear: bottom;
+
+}
+.item_description_container{
+	padding: 1.4em;
+}
 
 /**************************
 PAGE: Home
@@ -83,12 +103,37 @@ PAGE: Home
 	list-style: none;
 }
 
-.item_pages li{
-	
+/**************************
+PAGE: Cart
+**************************/
+.cart_img{
+	max-width: 10%;
 	float: left;
-	width: 45%;
-	margin: 2.5%;
-	background-color: #F5F5F5;
+}
+.cart {
+ 	border-collapse: separate;
+ 	border-color: grey;
+}  
+table thead {
+    background: #eaeaea;
+    color: #626262;
+}
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tbody {
+   	/*font-family: Arial,Helvetica,sans-serif;*/
+    color: #626262;
+    font-size: 0.8em;
+    background: #fff;
+    position: relative;
+} 
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
 }
 
 /**************************

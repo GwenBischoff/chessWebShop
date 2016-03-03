@@ -10,23 +10,23 @@
 			
 			//Chess page_id = 1
 			if ($page_id == 1) {
-				echo "<li><a href='chess.php' class='selected'>Chess</a></li>";
+				echo "<li><a href='chess.php' class='selected'>Schach</a></li>";
 			} else {
-				echo "<li><a href='chess.php'>Chess</a></li>";
+				echo "<li><a href='chess.php'>Schach</a></li>";
 			}
 			
 			//Other page_id = 2
 			if ($page_id == 2) {
-				echo "<li><a href='other.php' class='selected'>Other</a></li>";
+				echo "<li><a href='other.php' class='selected'>Andere</a></li>";
 			} else {
-				echo "<li><a href='other.php'>Other</a></li>";
+				echo "<li><a href='other.php'>Andere</a></li>";
 			}
 			
 			//Search page_id = 3
 			if ($page_id == 3) {
-				echo "<li><a href='search.php' class='selected'>Search</a></li>";
+				echo "<li><a href='search.php' class='selected'>Suche</a></li>";
 			} else {
-				echo "<li><a href='search.php'>Search</a></li>";
+				echo "<li><a href='search.php'>Suche</a></li>";
 			}
 			
 			//About page_id = 4
@@ -41,9 +41,9 @@
 		<?php	
 			//Cart page_id = 5
 			if ($page_id == 5) {
-				echo "<li><a href='cart.php' class='selected'>Cart</a></li>";
+				echo "<li><a href='cart.php' class='selected'>Warenkorb</a></li>";
 			} else {
-				echo "<li><a href='cart.php'>Cart</a></li>";
+				echo "<li><a href='cart.php'>Warenkorb</a></li>";
 			}
 			
 			if ($page_id == 6) {

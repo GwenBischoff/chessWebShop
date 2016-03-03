@@ -10,7 +10,13 @@
 
 <div class = "wrapper">
 	<section>
-<!---angezeigtes hier--->
+		<?php
+			//Methode index() aufrufen
+			require_once 'inc/get_data.php.inc';
+			//Übergabewert stimmt noch nicht
+			other();
+			sessionfct();
+		?>
 
 <?php
 	//Insert Footer

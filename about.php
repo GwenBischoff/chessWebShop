@@ -10,8 +10,13 @@
 
 <div class = "wrapper">
 	<section>
-<!---angezeigtes hier--->
-
+		<h3>About</h3>
+		<p>Auf dieser Seite werden handgefertigte Produkte aus unterschiedlichen Hölzern abgeboten. Die Produkte wurde von Hand gedrechselt und stellen alle Unikate dar.</p>
+		<p>Für weiter Informationen können Sie uns gerne kontaktieren.</p>
+		<p>Per Telefon unter XXX/XXXX </p>
+		<p>Oder per Mail unter abc@XXX.de</p>
+		</br>
+	</section>
 <?php
 	//Insert Footer
 	require_once 'inc/footer.html.inc';

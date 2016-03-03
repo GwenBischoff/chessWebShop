@@ -25,7 +25,7 @@
 <?php
 	require_once 'inc/get_data.php.inc';
 	search($search);
-
+	sessionfct();
 ?>
 <?php
 	//Insert Footer

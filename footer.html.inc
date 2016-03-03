@@ -1,5 +1,6 @@
 		<!-- Footer-Menue created -->
 				<div class = "footer">
+					</br>
 					<ul>
 						<li>Contact</li>
 						<li>Impressum</li>

@@ -15,6 +15,7 @@
 			require_once 'inc/get_data.php.inc';
 			//Übergabewert stimmt noch nicht
 			index();
+			sessionfct();
 		?>
 <?php
 	//Insert Footer
