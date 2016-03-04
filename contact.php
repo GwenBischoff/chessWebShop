@@ -1,5 +1,5 @@
 <?php
-	$page_id = 4;
+ 	$page_id = 6;
  	//Settings
  	require_once 'inc/configure.php.inc';
  	//Insert header
@@ -10,8 +10,8 @@
 
 <div class = "wrapper">
 	<section>
-		<h3>About</h3>
-		<p>Auf dieser Seite werden handgefertigte Produkte aus unterschiedlichen Hölzern abgeboten. Die Produkte wurde von Hand gedrechselt und stellen alle Unikate dar.</p>
+		<h3>Contact</h3>
+		</br>
 		<p>Für weiter Informationen können Sie uns gerne kontaktieren.</p>
 		<p>Per Telefon unter XXX/XXXX </p>
 		<p>Oder per Mail unter abc@XXX.de</p>

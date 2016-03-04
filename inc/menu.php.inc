@@ -44,14 +44,7 @@
 				echo "<li><a href='cart.php' class='selected'>Warenkorb</a></li>";
 			} else {
 				echo "<li><a href='cart.php'>Warenkorb</a></li>";
-			}
-			
-			if ($page_id == 6) {
-				
-			} else {
-				
-			}
-			
+			}			
 		?>
 	</div>
 </ul>

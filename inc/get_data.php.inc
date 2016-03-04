@@ -64,20 +64,19 @@
 		}
 	}
 
-
 	function session($row){
 		//Session saves all selected items to cart here "add/remove" buttons are created
 		if(!isset($_SESSION['cart'][$row['item_id']])) {
 			// Form & button "Add to cart"
 			$cart = '<form class="cart_form" action="" method="POST">'.
   				'<input type="hidden" name="add" value="'.$row['item_id'].'" />' .
- 				 '<input type="submit" value="Zum Warenkorb hinzufügen"/><br></form>';
+ 				 '<input type="submit" class="submit" value="Zum Warenkorb hinzufügen"/><br></form>';
 		}
 		else {
 			 // Form & button "Take out of cart"
-			$cart = '<form class="cart_form" action="" method="post">'.
+			$cart = '<form class="cart_form" action="" method="POST">'.
 				'<input type="hidden" name="del" value="' . $row['item_id'] . '" />' .
-				'<input type="submit" value="Aus Warenkorb entfernen"/><br></form>';
+				'<input type="submit" class="submit" value="Aus Warenkorb entfernen"/><br></form>';
 		}
 		echo $cart;
 	}
@@ -90,8 +89,9 @@
 
 			$session_query = "SELECT `item_id`, `name`, `price`, `img` FROM `items` WHERE `item_id` = $add_id";
 			$session = getdata_query($session_query);
-			if((mysqli_num_rows($session)) > 0) {
-				$data = mysqli_fetch_array($session);
+			var_dump(($session-> rowCount()));
+			if(($session-> rowCount()) > 0) {
+				$data = $session->fetch(PDO::FETCH_LAZY);
 				$item_id = $data['item_id'];
 				$article = $data['name'];
 				$price = $data['price'];

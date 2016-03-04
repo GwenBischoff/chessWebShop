@@ -12,17 +12,21 @@
 	<section>
 
 <?php
+	//$search saves entered words
 	$search = null;
 	if(!empty ($_GET["search"])){
 		$search = $_GET["search"];
 	}
+	//form to enter search 
 ?>
+	</br>
 	<form id="form-search" name="search-item" method="GET" target="_self" action="">
 		<input type="text" name="search" maxlength="32" placeholder="" required><br>
 		<br>
-		<input type="submit" value="Search now!"><br>
+		<input type="submit" class="submit" value="Suchen"><br>
 	</form>
 <?php
+	//query to database and creating page
 	require_once 'inc/get_data.php.inc';
 	search($search);
 	sessionfct();

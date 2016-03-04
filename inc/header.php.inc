@@ -10,7 +10,7 @@
 	<body>
 		<header>
 			<div class= "title">
-				<h1>Herzlich Willkommen!</h1>
+				<h1>Herzlich Wilkommen!</h1>
 			</div>
 				<!-- Navigation-Menue created -->
 				<nav>
