@@ -7,9 +7,15 @@
  	//Create Menu
  	require_once 'inc/menu.php.inc';
 
-if($_POST['quantity'] && $_POST['item_id']){
-
-	$_SESSION['cart'][$_POST['item_id']]['quantity'] = $_POST['quantity'];
+//Wenn Anzahl verändert wurde wird dies in quantity geändert
+if(isset($_POST['quantity']) && $_POST['item_id']){
+	//Wenn Anzahl = 0 aus Session löschen
+	if($_POST['quantity'] == 0){
+		unset($_SESSION['cart'][$_POST['item_id']]);
+	}
+	else{
+		$_SESSION['cart'][$_POST['item_id']]['quantity'] = $_POST['quantity'];
+	}
 }
 ?>
 <div class = "wrapper">
@@ -25,7 +31,7 @@ if($_POST['quantity'] && $_POST['item_id']){
 		</thead>
 		<tbody>
 <?php	// Check if cart exists
-	if (isset($_SESSION['cart'])) { 
+	if (!empty($_SESSION['cart'])) { 
 		foreach ($_SESSION['cart'] as $article): 
 			//Item_id ist auch übergeben, wird dem Nutzer aber nicht angezeigt
 			$price = $article['price'] * $article['quantity'];

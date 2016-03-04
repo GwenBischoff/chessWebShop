@@ -100,7 +100,6 @@
 				$new = array ('name' => $article, 'price' => $price, 'img' => $img, 'item_id' => $item_id, 'quantity' => $quantity);
 				//Save article with data
 				$_SESSION['cart'][$add_id] = $new;
-
 			}
 		}
 		//Remove session element
