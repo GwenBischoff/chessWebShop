@@ -177,6 +177,20 @@ tr {
 }
 
 /**************************
+CHECKOUT
+**************************/
+#checkout_button{
+	float: right;
+}
+
+#data_checkout_form{
+	margin: 2em;
+}
+.checkout{
+	margin: 0.5em;
+}
+
+/**************************
 COLOR
 **************************/
 

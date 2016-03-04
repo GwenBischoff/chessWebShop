@@ -69,6 +69,8 @@ if(isset($_POST['quantity']) && $_POST['item_id']){
 			
 		</tbody>	
 </table>
+<form class="cart_to_checkout_form" action="checkout.php" method="POST">
+<input type="submit" class="submit" id="checkout_button" value="Weiter"/><br></form></th>
 <?php
 	//Insert Footer
 	require_once 'inc/footer.php.inc';
