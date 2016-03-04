@@ -10,7 +10,7 @@
 
 <div class = "wrapper">
 	<section>
-		<h3>Contact</h3>
+		<h3>Kontakt</h3>
 		</br>
 		<p>Für weiter Informationen können Sie uns gerne kontaktieren.</p>
 		<p>Per Telefon unter XXX/XXXX </p>
@@ -18,5 +18,5 @@
 		</br>
 <?php
 	//Insert Footer
-	require_once 'inc/footer.html.inc';
+	require_once 'inc/footer.php.inc';
 ?>

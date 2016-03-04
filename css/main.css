@@ -25,7 +25,6 @@ header{
 .title{
     height: 100%;
     padding-top: 22px;
-	background-image: url("chess_main.jpg");
 }
 
 .title h1{
@@ -46,7 +45,7 @@ nav{
 }
 
 nav ul{
-	  list-style: none;
+	list-style: none;
 }
 nav li {
   display: inline;
@@ -69,6 +68,13 @@ nav a{
 /**************************
 FOOTER
 **************************/
+.footer li{
+	list-style: none;
+}
+.footer a{	color: #2b2b2b;
+	text-decoration: none;
+}
+
 body{
 	background-color: rgba(159, 155, 162, 0.1);
 }
@@ -174,6 +180,6 @@ tr {
 COLOR
 **************************/
 
-nav a.selected, nav a:hover{
+a.selected, nav a:hover{
 	color: #CC3300;
 }

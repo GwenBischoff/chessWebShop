@@ -96,7 +96,8 @@
 				$article = $data['name'];
 				$price = $data['price'];
 				$img = $data['img'];
-				$new = array ('name' => $article, 'price' => $price, 'img' => $img, 'item_id' => $item_id);
+				$quantity = 1;
+				$new = array ('name' => $article, 'price' => $price, 'img' => $img, 'item_id' => $item_id, 'quantity' => $quantity);
 				//Save article with data
 				$_SESSION['cart'][$add_id] = $new;
 

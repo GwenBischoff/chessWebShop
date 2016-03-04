@@ -18,5 +18,5 @@
 		</br>
 <?php
 	//Insert Footer
-	require_once 'inc/footer.html.inc';
+	require_once 'inc/footer.php.inc';
 ?>

@@ -6,8 +6,12 @@
  	require_once 'inc/header.php.inc';
  	//Create Menu
  	require_once 'inc/menu.php.inc';
-?>
 
+if($_POST['quantity'] && $_POST['item_id']){
+
+	$_SESSION['cart'][$_POST['item_id']]['quantity'] = $_POST['quantity'];
+}
+?>
 <div class = "wrapper">
 	<section>
 	<h2>Ihr Warenkorb</h2>
@@ -24,6 +28,7 @@
 	if (isset($_SESSION['cart'])) { 
 		foreach ($_SESSION['cart'] as $article): 
 			//Item_id ist auch übergeben, wird dem Nutzer aber nicht angezeigt
+			$price = $article['price'] * $article['quantity'];
 			?>
 			<tr>
 				<th>
@@ -33,18 +38,19 @@
 						<p> Artikelnummer: <?= $article['item_id'] ?></p>
 					</div>
 				 </th> 
-				<th><?php $quantity = 1?>
+				<th>
 					<form class="cart_quantity_form" action="" method="POST">
-					<input type="text" name="quantity" placeholder="<?= $quantity ?>" maxlength="4">
+					<input type="text" name="quantity" value="<?= $article['quantity'] ?>" maxlength="4">
+					<input type="hidden" name="item_id" value="<?= $article['item_id'] ?>">
 					<input type="submit" class="submit" value="Ok"/><br></form></th>
-				<th><?= $article['price'] ?> &euro;</th>
-				<?php $price += $article['price'] ?>
+				<th><?= $price   ?> &euro;</th>
+				<?php $totalprice += $price ?>
 			</tr>
 		<?php endforeach; ?>	
 			<tr class = "cart_item">
 				<th></th> 
 				<th>Gesamtpreis </th>
-				<th><?= $price ?> &euro;</th>
+				<th><?= $totalprice ?> &euro;</th>
 			</tr>
 	<?php } 
 	else{ ?>
@@ -59,5 +65,5 @@
 </table>
 <?php
 	//Insert Footer
-	require_once 'inc/footer.html.inc';
+	require_once 'inc/footer.php.inc';
 ?>
