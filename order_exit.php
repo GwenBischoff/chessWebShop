@@ -18,7 +18,6 @@
 			$sql->query($query);
 			$result = $sql->lastInsertId();
 			//gibt die letze eingefügte ID zurück
-			var_dump($result);
 			return $result;
 		}
 
@@ -36,11 +35,16 @@
 			foreach ($_SESSION['cart'] as $article){
 				$totalprice += ($article['price'] * $article['quantity']);
 			}
-			$order_id = into_db("INSERT INTO `order`(`person_id`, `total_price`, `payment`) VALUES ('$person_id', $totalprice, '$payment')"); 
-			order_nr_to_db($order_id);
+			$order_nr = into_db("INSERT INTO `order`(`person_id`, `total_price`, `payment`) VALUES ('$person_id', $totalprice, '$payment')"); 
+			order_nr_to_db($order_nr);
 		}
-		function order_nr_to_db(){
-			//hier mit  $order_id weiter arbeiten
+		function order_nr_to_db($order_nr){
+			foreach ($_SESSION['cart'] as $article){
+				$price = $article['price'] * $article['quantity'];
+				$name = $article['name'];
+				$quantity = $article['quantity'];
+				$order_id = into_db("INSERT INTO `order_nr`(`order_nr`, `article`, `quantity`, `total_price_article`) VALUES ($order_nr, '$name', $quantity, $price)"); 
+			}	
 		}
 		function zip_to_db(){
 			$zip = $_POST['zip'];
@@ -48,30 +52,14 @@
 			into_db("INSERT INTO `zip` (`zip`, `city) VALUES ($zip, '$city')"); 
 			
 		}
-		
-		/*foreach ($_SESSION['cart'] as $article){
-		$price = $article['price'] * $article['quantity'];
-			$name = $article['name'];
-			$quantity = $article['quantity'];
-			$order_id = into_db("INSERT INTO `order_nr`(`article`, `quantity`, `total_price_article`) VALUES ('$name', '$quantity', '$price')"); 
-			var_dump($result);	
-		} 
-		
-		$query = $sql->prepare("INSERT INTO `person`(`prename`, `name`, `` , `gender`, `height`, `born`) VALUES (:name, :haircolor, :race, :gender, :height, :born)");
-
-		//Fill the data-array for prepared query
-		$data = Array(
-			':name' => $_POST['name'],
-			':haircolor' => $_POST['haircolor'],
-			':race' => $_POST['race'],
-			':gender' => $_POST['gender'],
-			':height' => $_POST['height'],
-			':born' => $_POST['born']
-		);
-
-		$query = $sql->prepare("INSERT INTO `customer`(`customer_id`, `prename`, `name`, `street` , `street_number`, `zip`)");
-		$query = $sql->prepare("INSERT INTO `zip`(`zip`, `city`)"); //doppelte einträge
-		*/?>
+		/*Vielen Dank & Bestellnummer & PersonenID ausgeben 
+		Bestellung noch mal anzeigen
+		Datenbank füllen
+		Emailadresse hinzufügen
+		Drop Session
+		*/
+		?>
+		<p>Vielen Dank für Ihre Bestellung!</p>
 <?php
 	//Insert Footer
 	require_once 'inc/footer.php.inc';

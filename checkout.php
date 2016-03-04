@@ -26,7 +26,7 @@
 			<option value="Vorauskasse">Vorauskasse</option>
 		</select></br>
 		
-		<input form="data_checkout_form" class="checkout" type="submit" class="submit" value="Bestellung absenden"><br>
+		<input form="data_checkout_form" class="checkout" id="submit" type="submit" value="Bestellung absenden"><br>
 <?php
 	//Insert Footer
 	require_once 'inc/footer.php.inc';
