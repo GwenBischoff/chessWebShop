@@ -19,6 +19,7 @@
 		<input form="data_checkout_form" class="checkout" type="text" name="streetnumber" maxlength="64" placeholder="Hausnr." required></br>
 		<input form="data_checkout_form" class="checkout" type="number" name="zip" placeholder="PLZ" required>
 		<input form="data_checkout_form" class="checkout" type="text" name="city" placeholder="Stadt" required></br>
+		<input form="data_checkout_form" class="checkout" type="text" name="email" placeholder="Email" required></br>
 		</br>
 		<span>Bezahlung</span></br>
 		<select form="data_checkout_form" class="checkout" name="payment" required>
