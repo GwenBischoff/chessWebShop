@@ -18,7 +18,15 @@
 						<div class= 'item_description_container'>
 						<!-- echo <a href="">; Einzelne Seite Link in DB -->
 							<h3> <?= $row['name'] ?> </h3>
-							<p>Material: <?= $row['material'] ?> </p>
+							<p>Material: 
+								<?php 
+									$id = $row['wood'];
+									$query = "SELECT * FROM `wood` WHERE `wood_id`= $id";
+									$wood = getdata_query($query); 
+									foreach ($wood as $wood_row){
+										echo $wood_row['name'];
+									}
+								?></p>
 							<p>Preis: <?= $row['price'] . " € " ?> </p>
 							<p> <?= $row['description'] ?> <br/></p>
 						</div>
@@ -32,7 +40,7 @@
 
 	function index(){
 		//Index page shows all data from database
-		$query = "SELECT * FROM `items";
+		$query = "SELECT * FROM `items`";
 		$result = getdata_query($query);
 		show_data($result);
 	}
@@ -53,7 +61,6 @@
 		show_data($result);
 	}
 
-
 	function search($search){
 		//Search page shows all searched items from database
 		$query = "SELECT * FROM `items` WHERE `description` LIKE '%$search%'"; 
@@ -65,12 +72,23 @@
 	}
 
 	function session($row){
+		$added = false;
+		if (isset($_SESSION['cart'][$row['item_id']])){
+			$added = true;
+		}
+		if (isset($_POST['add']) && $_POST['add'] == $row['item_id']){
+			$added = true;
+		}
+		if (isset($_POST['del']) && $_POST['del'] == $row['item_id']){
+			$added = false;
+		}
+
 		//Session saves all selected items to cart here "add/remove" buttons are created
-		if(!isset($_SESSION['cart'][$row['item_id']])) {
+		if(!$added) {
 			// Form & button "Add to cart"
 			$cart = '<form class="cart_form" action="" method="POST">'.
   				'<input type="hidden" name="add" value="'.$row['item_id'].'" />' .
- 				 '<input type="submit" class="submit" value="Zum Warenkorb hinzufügen"/><br></form>';
+ 				'<input type="submit" class="submit" value="Zum Warenkorb hinzufügen"/><br></form>';
 		}
 		else {
 			 // Form & button "Take out of cart"
@@ -89,7 +107,6 @@
 
 			$session_query = "SELECT `item_id`, `name`, `price`, `img` FROM `items` WHERE `item_id` = $add_id";
 			$session = getdata_query($session_query);
-			var_dump(($session-> rowCount()));
 			if(($session-> rowCount()) > 0) {
 				$data = $session->fetch(PDO::FETCH_LAZY);
 				$item_id = $data['item_id'];

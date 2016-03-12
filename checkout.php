@@ -1,4 +1,5 @@
 <?php
+ 	$page_id = 8;
  	//Settings
  	require_once 'inc/configure.php.inc';
  	//Insert header

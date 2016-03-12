@@ -31,6 +31,7 @@ if(isset($_POST['quantity']) && $_POST['item_id']){
 		</thead>
 		<tbody>
 <?php	// Check if cart exists
+	$totalprice =  0;
 	if (!empty($_SESSION['cart'])) { 
 		foreach ($_SESSION['cart'] as $article): 
 			//Item_id ist auch übergeben, wird dem Nutzer aber nicht angezeigt
