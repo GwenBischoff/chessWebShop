@@ -11,9 +11,8 @@
 <div class = "wrapper">
 	<section>
 		<?php
-			//Methode index() aufrufen
+			//Methode index() & session fct aufrufen
 			require_once 'inc/get_data.php.inc';
-			//Übergabewert stimmt noch nicht
 			index();
 			sessionfct();
 		?>

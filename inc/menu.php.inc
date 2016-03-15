@@ -38,7 +38,14 @@
 		?>
 	</div>
 	<div class = "right">
-		<?php	
+		<?php
+			//Cart page_id = 8
+			if ($page_id == 8) {
+				echo "<li><a href='login.php' class='selected'>Login</a></li>";
+			} else {
+				echo "<li><a href='login.php'>Login</a></li>";
+			}	
+
 			//Cart page_id = 5
 			if ($page_id == 5) {
 				echo "<li><a href='cart.php' class='selected'>Warenkorb</a></li>";
